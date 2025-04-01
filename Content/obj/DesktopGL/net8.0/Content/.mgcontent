@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/eler07001/slutuppgift/Content/Enemy-car1.png</File>
+    <File>C:/Users/eler07001/slutuppgift/Content/Enemy-car2.png</File>
+    <File>C:/Users/eler07001/slutuppgift/Content/Enemy-car3.png</File>
+    <File>C:/Users/eler07001/slutuppgift/Content/Player-car.png</File>
+    <File>C:/Users/eler07001/slutuppgift/Content/Road.jpg</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
