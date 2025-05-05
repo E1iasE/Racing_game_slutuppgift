@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/eler07001/slutuppgift/Content/Enemy-car1.png</SourceFile>
-  <SourceTime>2025-03-31T08:24:58.8532793+02:00</SourceTime>
+  <SourceTime>2025-04-02T15:13:06.2810816+02:00</SourceTime>
   <DestFile>C:/Users/eler07001/slutuppgift/Content/bin/DesktopGL/Content/Enemy-car1.xnb</DestFile>
-  <DestTime>2025-04-01T19:51:58.0921191+02:00</DestTime>
+  <DestTime>2025-04-02T15:13:14.268202+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

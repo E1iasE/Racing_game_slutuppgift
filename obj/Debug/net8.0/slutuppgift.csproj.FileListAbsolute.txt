@@ -28,3 +28,5 @@ C:\Users\eler07001\slutuppgift\bin\Debug\net8.0\Content\Enemy-car2.xnb
 C:\Users\eler07001\slutuppgift\bin\Debug\net8.0\Content\Enemy-car3.xnb
 C:\Users\eler07001\slutuppgift\bin\Debug\net8.0\Content\Player-car.xnb
 C:\Users\eler07001\slutuppgift\bin\Debug\net8.0\Content\Road.xnb
+C:\Users\eler07001\slutuppgift\bin\Debug\net8.0\Content\game.over.xnb
+C:\Users\eler07001\slutuppgift\obj\Debug\net8.0\slutuppgift.sourcelink.json

@@ -1,0 +1,6 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/eler07001/slutuppgift/Content/Enemy-car1.png","C:/Users/eler07001/slutuppgift/Content/bin/DesktopGL/Enemy-car1.xnb","TextureProcessor","Texture2DContent",11809,23797,0,7409669
+"C:/Users/eler07001/slutuppgift/Content/Enemy-car2.png","C:/Users/eler07001/slutuppgift/Content/bin/DesktopGL/Enemy-car2.xnb","TextureProcessor","Texture2DContent",11347,22729,0,0050038
+"C:/Users/eler07001/slutuppgift/Content/Enemy-car3.png","C:/Users/eler07001/slutuppgift/Content/bin/DesktopGL/Enemy-car3.xnb","TextureProcessor","Texture2DContent",9113,23413,0,0043663
+"C:/Users/eler07001/slutuppgift/Content/Player-car.png","C:/Users/eler07001/slutuppgift/Content/bin/DesktopGL/Player-car.xnb","TextureProcessor","Texture2DContent",41052,451285,0,0220076
+"C:/Users/eler07001/slutuppgift/Content/Road.png","C:/Users/eler07001/slutuppgift/Content/bin/DesktopGL/Road.xnb","TextureProcessor","Texture2DContent",529622,4000085,0,1288583

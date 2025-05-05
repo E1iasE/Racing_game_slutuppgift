@@ -8,6 +8,7 @@ namespace RaceingGame;
 
 public class Game1 : Game
 {
+    
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
@@ -16,7 +17,7 @@ public class Game1 : Game
     private Texture2D enemy2Texture;
     private Texture2D enemy3Texture;
     private Texture2D roadTexture;
-    //private SpriteFont scoreFont;
+    private Texture2D GameOverTexture;
 
     private Vector2 playerPosition;
     private List<(Vector2 Position, Texture2D Texture)> enemies; // Lista för fiender med position och textur
@@ -25,6 +26,7 @@ public class Game1 : Game
     private bool isGameOver = false;
     private int score = 0;
 
+
     private KeyboardState keyboardState;
 
     public Game1()
@@ -32,6 +34,10 @@ public class Game1 : Game
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
+
+        _graphics.PreferredBackBufferWidth = 1100;
+        _graphics.PreferredBackBufferHeight = 700;
+        _graphics.ApplyChanges();
     }
 
     protected override void Initialize()
@@ -39,7 +45,7 @@ public class Game1 : Game
         screenWidth = _graphics.PreferredBackBufferWidth;
         screenHeight = _graphics.PreferredBackBufferHeight;
 
-        playerPosition = new Vector2(screenWidth / 2 - 25, screenHeight - 100);
+        playerPosition = new Vector2(screenWidth / 2, screenHeight -135);
         enemies = new List<(Vector2, Texture2D)>(); // Initiera lista för fiender
         random = new Random();
 
@@ -55,7 +61,8 @@ public class Game1 : Game
         enemy2Texture = Content.Load<Texture2D>("Enemy-car2");
         enemy3Texture = Content.Load<Texture2D>("Enemy-car3");
         roadTexture = Content.Load<Texture2D>("Road");
-        //scoreFont = Content.Load<SpriteFont>("ScoreFont");
+        GameOverTexture = Content.Load<Texture2D>("game.over");
+
     }
 
     protected override void Update(GameTime gameTime)
@@ -68,18 +75,17 @@ public class Game1 : Game
 
         if (keyboardState.IsKeyDown(Keys.Left) && playerPosition.X > 50)
         {
-            playerPosition.X -= 5;
+            playerPosition.X -= 6;
         }
         if (keyboardState.IsKeyDown(Keys.Right) && playerPosition.X < screenWidth - 50 - playerTexture.Width)
         {
-            playerPosition.X += 5;
+            playerPosition.X += 6;
         }
 
         // Skapa nya fiender slumpmässigt
         if (random.Next(100) < 3)
         {
-            float xPos = random.Next(50, screenWidth - 50 - enemy1Texture.Width);
-            //float xPos = 150;
+            float xPos = random.Next(60, screenWidth - 60 - enemy1Texture.Width);
             Texture2D randomEnemyTexture = GetRandomEnemyTexture(); // Välj slumpmässig fiendetextur
             enemies.Add((new Vector2(xPos, -randomEnemyTexture.Height), randomEnemyTexture));
         }
@@ -114,49 +120,25 @@ public class Game1 : Game
             0 => enemy1Texture,
             1 => enemy2Texture,
             2 => enemy3Texture,
-            _ => enemy1Texture // Fallback
         };
     }
 
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
-
-
         _spriteBatch.Begin();
-        int roadWidth = roadTexture.Width;
-        int roadHeight = roadTexture.Height;
         
-        // Scale the road texture to fit the screen while maintaining its aspect ratio
-        float scale = (float)screenHeight / roadHeight;
-        int scaledWidth = (int)(roadWidth * scale);
-        
-        _spriteBatch.Draw(
-            roadTexture,
-            new Rectangle((screenWidth - scaledWidth) / 2, 0, scaledWidth, screenHeight),
-            Color.White
-        );
-        //_spriteBatch.Draw(roadTexture, new Rectangle(50, 0, screenWidth - 100, screenHeight), Color.White);
-
-/*
+        _spriteBatch.Draw(roadTexture, new Rectangle(0, 0, screenWidth - 0, screenHeight), Color.White);
+        _spriteBatch.Draw(playerTexture, playerPosition, Color.White);
+        foreach (var enemy in enemies)
+        {
+            _spriteBatch.Draw(enemy.Texture, enemy.Position, Color.White);
+        }
         if (isGameOver)
         {
-            _spriteBatch.DrawString(scoreFont, "Game Over! Score: " + score, new Vector2(screenWidth / 2 - 100, screenHeight / 2), Color.Red);
+            _spriteBatch.Draw(GameOverTexture, new Rectangle(460,200,screenWidth-924, screenHeight-664), Color.White);
         }
-        else
-        {
-            _spriteBatch.Draw(playerTexture, playerPosition, Color.White);
 
-            // Rita alla fiender
-            foreach (var enemy in enemies)
-            {
-                _spriteBatch.Draw(enemy.Texture, enemy.Position, Color.White);
-            }
-
-            // Rita poängen
-            _spriteBatch.DrawString(scoreFont, "Score: " + score, new Vector2(10, 10), Color.White);
-        }
-*/
         _spriteBatch.End();
         base.Draw(gameTime);
     }
